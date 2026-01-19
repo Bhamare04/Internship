@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .form-container {
+            width: 350px;
+            margin: 100px auto;   /* center horizontally */
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-container">
+    <h2>Student Form</h2>
+
+    <form id="myForm">
+        <label for="name">Name</label>
+        <input type="text" id="name">
+
+        <label for="rollno">Roll No</label>
+        <input type="text" id="rollno">
+
+        <label for="mobile">Mobile</label>
+        <input type="text" id="mobile">
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+document.getElementById("myForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let rollno = document.getElementById("rollno").value;
+    let mobile = document.getElementById("mobile").value;
+
+    if (name === "" || rollno === "" || mobile === "") {
+        alert("Please enter all details");
+    } else {
+        console.log("Name:", name);
+        console.log("Roll No:", rollno);
+        console.log("Mobile:", mobile);
+    }
+});
+</script>
+
+</body>
+</html>
